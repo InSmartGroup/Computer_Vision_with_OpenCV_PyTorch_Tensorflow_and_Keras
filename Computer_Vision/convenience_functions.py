@@ -168,8 +168,8 @@ def contours_centroid(contours, image=None, mark=None):
     return centers
 
 
-def contours_area(contours, filter_area=None, filter_perimeter=None,
-                  sort_area=False, sort_perimeter=False, verbose=False):
+def contours_area_perimeter(contours, filter_area=None, filter_perimeter=None,
+                            sort_area=False, sort_perimeter=False, verbose=False):
     """Returns two lists that contain area and perimeter of each contour.
     Syntax:
     contours: var - required variable that contains a list of contours
