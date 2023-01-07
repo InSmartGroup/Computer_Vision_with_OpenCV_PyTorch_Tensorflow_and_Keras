@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+from imutils.perspective import order_points
 import cv_functions as cf
 
 # Create a video reader object
@@ -61,10 +62,11 @@ while True:
         if DRAW_CONTOURS:
             cv2.drawContours(frame, largest_contour, -1, (0, 255, 255), 3, cv2.LINE_AA)
 
-        # Find 4 keypoints of the largest contour
+        # Find keypoints in the largest contour
         contour_points = cv2.approxPolyDP(largest_contour,
                                           epsilon=cv2.arcLength(largest_contour, closed=True) * 0.05,
                                           closed=True)
+
         print(f"Contour points: {len(contour_points)}")
 
         # Define the size of the transformed image
